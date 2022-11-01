@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETIFY.COM</title>
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div>
+        <p id="head">PETIFY WORLD</p>
+    </div>
+    <div class="container">
+        <form action= "Login.html" method="post" name="form" onsubmit="return validated()">
+        <fieldset class="apj">
+        <h1><b>  SIGN UP<b></h1>
+            <div class="form-group">
+                <input type="text" name="namef" placeholder="Enter your Name">
+            </div>
+            <div class="form-group">
+                <input type="text" name="email" placeholder="Enter Email" >
+            </div>
+            <div class="form-group">
+                <input type="password" name="pass" placeholder="Enter Password">
+            </div>
+            <div class="form-group">
+                <input type="password" name="re_pass" placeholder="Enter Password Again">
+            </div>
+            <div class="form-group">
+                <input type="text" name="contact" placeholder="Enter Mobile Number">
+            </div>
+            <input type="submit" class="button" value="Register" />
+            </fieldset>
+        </form>
+        </div>
+	<!-- JS -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="alert/dist/sweetalert/.css">
+    <script type="text/javascript">
+
+	var namef = document.forms['form']['namef'];
+    var email = document.forms['form']['email'];
+    var pass = document.forms['form']['pass'];
+    var re_pass = document.forms['form']['re_pass'];
+    var contact = document.forms['form']['contact'];
+    function validated(){
+
+    if (namef.value == null || namef.value== "") {
+     swal("Oops","Enter Your Name","error");
+      return false;
+	}
+	else if(email.value == null || email.value == "") {
+        swal("Oops","Enter Your email","error");
+        return false;
+	}
+	else if (pass.value == null || pass.value == "") {
+		swal("Oops","Enter Your Password","error");
+        return false;
+	}
+    else if (re_pass.value != pass.value) {
+		swal("Oops","Enter Your Correct Password","error");
+        return false;
+	}
+    else if (contact.value.length < 10 || contact.value.length > 10) {
+		swal("Oops","Mobile number should be of 10 Digit","error");
+        return false;
+	}
+
+}
+	</script>
+
+
+
+</body>
+</html>

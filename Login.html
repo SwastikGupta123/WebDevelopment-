@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETIFY.COM</title>
+<link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div>
+        <p id="head">PETIFY WORLD</p>
+    </div>
+    <div class="container">
+    <fieldset class="apj">
+        <form action= "Home.html" method="post" name="form" onsubmit="return validated()">
+        <h1><b>  SIGN IN</b></h1>
+            <div class="form-group">
+                <input autocomplete="off" type="email" name="email" placeholder="Enter your Email">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Enter Password">
+            </div>
+            <input type="submit" class="button" value="Log in" />
+            </form>
+            <div>
+               <a href="Registration.html" class="head1">Create your Account</a>
+            </div>
+            </fieldset>
+    </div>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+	<script src="main.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="alert/dist/sweetalert/.css"> 
+	<script type="text/javascript">
+    var email = document.forms['form']['email'];
+    var password = document.forms['form']['password'];
+    function validated(){
+	if (email.value == null || email.value == "") {
+        swal("Oops","Enter Your Email","error");
+        return false;
+	}
+	else if (password.value == null || password.value == "") {
+		swal("Oops","Enter Your Password","error");
+        return false;
+	}
+
+}
+</script>
+</body>
+</html>
